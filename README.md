@@ -1,2 +1,5 @@
 # b
-xamppとmysqlが必要です。
+
+xamppとmysqlが必修です。
+
+locale.phpはまだ使わないファイルです。
