@@ -1,4 +1,5 @@
 # b
+ライブラリとして　jQuery、AJAX、Bootstrapを使いました。
 
 xamppとmysqlが必修です。
 
