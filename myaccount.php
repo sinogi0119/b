@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start();//dddfdfd
     if(!isset($_SESSION['username']) || !isset($_SESSION['username'])){
         echo "<script>alert('問題発生!');";
         echo "window.location.href=\"../b/index.php\";</script>";
