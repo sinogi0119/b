@@ -1,10 +1,9 @@
 <?php
-    session_start();//dddfdfd
+    session_start();
     if(!isset($_SESSION['username']) || !isset($_SESSION['username'])){
         echo "<script>alert('問題発生!');";
-        echo "window.location.href=\"../b/index.php\";</script>";
+        echo "window.location.href=\"index.php\";</script>";
     }
-
     $conn = mysqli_connect('localhost', 'root', '', 'user');
     $username = $_SESSION['username'];
     $sql = "SELECT * FROM member WHERE id='$username'";

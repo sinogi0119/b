@@ -11,6 +11,7 @@ else {
     $name = $_SESSION['username'];
 } 
 ?>
+<html lang="en">
 <head>
     <title>index</title>
     <meta charset="utf-8">

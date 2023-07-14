@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,13 +10,12 @@
 </head>
 <body class="text-center">
   <main class="form-signin">
-  <button type="button" class="btn btn-dark" onclick="location.href='login_es.php'">English</button>
-  <button type="button" class="btn btn-dark" onclick="location.href='login.php'">日本語</button>
-  <button type="button" class="btn btn-dark" onclick="location.href='login.php'">한국어</button>
+  <button type="button" class="btn btn-dark" onclick="location.href='./es/login.php'">English</button>
+  <button type="button" class="btn btn-dark" onclick="location.href='./jp/login.php'">日本語</button>
+  <button type="button" class="btn btn-dark" onclick="location.href='./kr/login.php'">한국어</button>
   </main>
 </body>
-<!-- 国家コードによって開けるページが異なる -->
-<!-- <script>
+<script> //起動しない
 var type = navigator.appName
 var lang;
 if (type=="Netscape")
@@ -31,6 +30,6 @@ if (lang == "ko")
 else if (lang == "jp")
     window.location.replace('login.php')
 else
-    window.location.replace('login.es.php')
-</script> -->
+    window.location.replace('login.php')
+</script>
 </html>

@@ -58,7 +58,7 @@ const sendit = () => {
         return false;
     }
     if(idck==0){
-        alert('IDをCHECKしてください。');
+        alert('ID使用可否を確認してください。');
         return false;
     }
     if(idck==false){
@@ -68,40 +68,73 @@ const sendit = () => {
     return true;
 }
 
-const checkId = () => {
-    const userid = document.regiform._id;
-    const result = document.querySelector('#result');
-    if(userid.value == '') {
-        alert('IDを入力してください。');
-        userid.focus();
-        return false;
-    }
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = () => {
-        if(xhr.readyState == XMLHttpRequest.DONE) {
-            if(xhr.status == 200) {
-                let txt = xhr.responseText.trim();
+//CHECKボータン作動
+// const checkId = () => {
+//     const userid = document.regiform._id;
+//     const result = document.querySelector('#result');
+//     if(userid.value == '') {
+//         alert('IDを入力してください。');
+//         userid.focus();
+//         return false;
+//     }
+//     const xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = () => {
+//         if(xhr.readyState == XMLHttpRequest.DONE) {
+//             if(xhr.status == 200) {
+//                 let txt = xhr.responseText.trim();
+//                 if(txt == "O") {
+//                     result.style.display = "block";
+//                     result.style.color = "green";
+//                     result.innerHTML = "使用できるIDです。";
+//                     idck = true;
+//                 } else {
+//                     result.style.display = "block";
+//                     result.style.color = "red";
+//                     result.innerHTML = "使用できないIDです。";
+//                     userid.focus();
+//                     idck = false;
+//                 }
+//             }
+//         }
+//     }
+//     xhr.open("GET", "checkid.php?id="+userid.value, true);
+//     xhr.send();
+// }
 
-                if(txt == "O") {
-                    result.style.display = "block";
-                    result.style.color = "green";
-                    result.innerHTML = "使用できるIDです。";
-                    idck = true;
-                } else {
-                    
-                    result.style.display = "block";
-                    result.style.color = "red";
-                    result.innerHTML = "使用できないIDです。";
-                    userid.focus();
-                    idck = false;
-                }
-            }
-        }
-    }
-    xhr.open("GET", "checkid.php?id="+userid.value, true);
-    xhr.send();
+
+$(document).ready(function(e){
+    $(".fadeInfirst").on("keyup",function(){
+    var self =$(this);
+    var id;
+    var zero = 0;
+    var one = 1;
+    var two = 2;
     
-}
+    
+    if(self.attr("id")==="_id"){
+        id=self.val();
+    }
+    $.post(
+          "regchkid.php",
+    {id : id},
+    function(data){
+             if(data==zero){
+      //console.log(data)
+    $('#idcheck').text('');
+       $('#idcheck').html("<font color='#0821F8'>使用可能なIDです</font>");
+       idck=true;
+     }else if(data==one){
+    $('#idcheck').text('');
+       $('#idcheck').html("<font color='#FF6600'>使用できないIDです</font>");
+       idck=false;
+     }else if(data==two){
+    $('#idcheck').text('');
+       $('#idcheck').html("<font color='#FF6600'>IDは1文字以上入力してください。</font>");
+     }
+     }
+     );
+    });
+    });
 
 let isPwdValid = false;
 let isSeiValid = false;
@@ -178,15 +211,3 @@ document.querySelector("#_mei").addEventListener("input",function(){
      }
 });
 
-document.querySelector("#_id").addEventListener("input",function(){
-    this.classList.remove("is-valid");
-     this.classList.remove("is-invalid");
-     const inputID=this.value;
-     if(inputID==0){
-        this.classList.add("is-invalid");
-        isIDValid = false;
-     }else{
-        this.classList.add("is-valid");
-        isIDValid = true;
-     }
-});

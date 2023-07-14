@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
       <div class="mb-3">
       <input type="text" name="_id" id="_id" class="form-control" placeholder="ID">
       <div class="invalid-feedback">
-              IDを入力してください。
-            </div>
+      IDを入力してください。
+      </div>
       </div>
       <div class="mb-3">
       <input type="password" name="_pw" id="_pw" class="form-control" placeholder="PASSWORD">

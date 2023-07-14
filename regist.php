@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,20 +17,21 @@
         <form action="./a.php" method="post" name="regiform" id="regist-Form" class="validation-form" novalidate onsubmit="return sendit()">
 
           <div class="row">
-          <div class="col-md-10 mb-3">
+          <div class="mb-3">
         <label  for="_d">ID</label>
-            <input name="_id" type="text" class="form-control" id="_id" placeholder="ID" required>
-            <div class="invalid-feedback">
+            <input name="_id" type="text"  class="form-control fadeInfirst" id="_id" placeholder="ID" required>
+            <p id="idcheck"></p>
+            <!-- <div class="invalid-feedback">
               IDを入力してください。
-            </div>
+            </div> -->
           </div>
-
+<!-- 
           <div class="col-md-2 mb-3">
           <label for="_d">ID CHECK</label>
           <div>
             <input class="btn btn-primary btn-block" type="button" id="checkIdBtn" value="check" onclick="checkId()">
           </div></div>
-          <p id="result">&nbsp;</p>
+          <p id="result">&nbsp;</p> -->
 
           <div class="mb-3">
             <label for="pw">パスワード</label>
