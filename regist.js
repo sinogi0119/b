@@ -68,38 +68,6 @@ const sendit = () => {
     return true;
 }
 
-//CHECKボータン作動
-// const checkId = () => {
-//     const userid = document.regiform._id;
-//     const result = document.querySelector('#result');
-//     if(userid.value == '') {
-//         alert('IDを入力してください。');
-//         userid.focus();
-//         return false;
-//     }
-//     const xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = () => {
-//         if(xhr.readyState == XMLHttpRequest.DONE) {
-//             if(xhr.status == 200) {
-//                 let txt = xhr.responseText.trim();
-//                 if(txt == "O") {
-//                     result.style.display = "block";
-//                     result.style.color = "green";
-//                     result.innerHTML = "使用できるIDです。";
-//                     idck = true;
-//                 } else {
-//                     result.style.display = "block";
-//                     result.style.color = "red";
-//                     result.innerHTML = "使用できないIDです。";
-//                     userid.focus();
-//                     idck = false;
-//                 }
-//             }
-//         }
-//     }
-//     xhr.open("GET", "checkid.php?id="+userid.value, true);
-//     xhr.send();
-// }
 
 
 $(document).ready(function(e){
@@ -119,7 +87,6 @@ $(document).ready(function(e){
     {id : id},
     function(data){
              if(data==zero){
-      //console.log(data)
     $('#idcheck').text('');
        $('#idcheck').html("<font color='#0821F8'>使用可能なIDです</font>");
        idck=true;
